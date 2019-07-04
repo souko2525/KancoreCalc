@@ -1,0 +1,24 @@
+{
+  "root": true,
+  "plugins": ["@typescript-eslint", "@typescript-eslint/tslint"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "rules": { // <- 追加(先ほどのconsoleのルールは削除して、このルールだけにします)
+    "@typescript-eslint/tslint/config": [
+      "warn",
+      {
+        "lintFile": "./tslint.json"
+      }
+    ]
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"// <- 追加
+  }
+}
