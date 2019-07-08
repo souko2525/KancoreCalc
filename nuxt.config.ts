@@ -59,5 +59,4 @@ const config: NuxtConfiguration = {
     }
   }
 }
-
 export default config
