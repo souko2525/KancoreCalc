@@ -1,18 +1,24 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "@typescript-eslint/tslint"],
   "parser": "@typescript-eslint/parser",
   "env": {
     "es6": true,
     "browser": true
   },
   "rules": {
-    "no-console": "error"
+    "@typescript-eslint/tslint/config": [
+      "warn",
+      {
+        "lintFile": "./tslint.json"
+      }
+    ]
   },
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "project": "./tsconfig.json"
   }
 }
