@@ -4,6 +4,7 @@
   "rules": {
     "no-namespace": false,
     "no-string-literal": false,
+    "quotemark": false,
     "max-line-length": {
       "options": {"limit": 120},
       "severity": "warn"
