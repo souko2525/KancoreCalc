@@ -20,8 +20,11 @@
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
     "express": "^4.16.4",
+    "firebase": "^6.3.0",
     "nuxt": "^2.0.0",
-    "ts-node": "^8.3.0"
+    "ts-node": "^8.3.0",
+    "vuefire": "^2.0.1",
+    "vuexfire": "^3.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

@@ -29,7 +29,7 @@ const config: NuxtConfiguration = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/element-ui'],
+  plugins: ['@/plugins/element-ui', '~/plugins/firebase'],
   /*
    ** Nuxt.js modules
    */
