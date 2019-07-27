@@ -11,7 +11,8 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.ts --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.ts",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "eslint": "eslint -c ./.eslintrc.json ./**/*.ts"
   },
   "dependencies": {
     "@nuxt/typescript": "^2.8.1",
@@ -19,27 +20,64 @@
     "cross-env": "^5.2.0",
     "element-ui": "^2.4.11",
     "express": "^4.16.4",
+    "firebase": "^6.3.0",
     "nuxt": "^2.0.0",
-    "ts-node": "^8.3.0"
+    "nuxt-property-decorator": "^2.3.0",
+    "ts-node": "^8.3.0",
+    "vuefire": "^2.0.1",
+    "vuexfire": "^3.0.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
     "@nuxtjs/eslint-module": "^0.0.1",
+    "@types/jest": "^24.0.15",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "eslint": "^5.15.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": ">=12.0.0",
     "eslint-plugin-import": ">=2.16.0",
     "eslint-plugin-jest": ">=22.3.0",
     "eslint-plugin-node": ">=8.0.1",
     "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",
-    "vue-jest": "^3.0.3"
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "vue-class-component": "^7.1.0",
+    "vue-jest": "^3.0.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json",
+        "diagnostics": true
+      }
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1",
+      "^~/(.*)$": "<rootDir>/$1"
+    },
+    "moduleDirectories": ["node_modules", "./"]
   }
 }

@@ -5,6 +5,12 @@
       <h1 class="title">
         KancoreCalc
       </h1>
+      <li v-for="(user, userIdx) in users" :key="userIdx">
+        <ul>
+          <li>name: {{ user.name }}</li>
+          <li>email: {{ user.email }}</li>
+        </ul>
+      </li>
       <h2 class="subtitle">
         My first-class Nuxt.js project
       </h2>
@@ -17,11 +23,11 @@
           Documentation
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="/calc"
           target="_blank"
           class="button--grey"
         >
-          GitHub
+          calc
         </a>
       </div>
     </div>
@@ -30,10 +36,24 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import firebase from '@/plugins/firebase'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
     Logo
+  },
+  created: function () {
+    const db = firebase.firestore()
+    this.$store.dispatch('init', db.collection('users'))
+  },
+  computed: {
+    ...mapGetters({ users: 'getUsers' })
+  },
+  methods: {
+    googleLogin: function() {
+      firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    }
   }
 }
 </script>
