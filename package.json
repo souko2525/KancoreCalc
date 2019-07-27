@@ -22,6 +22,7 @@
     "express": "^4.16.4",
     "firebase": "^6.3.0",
     "nuxt": "^2.0.0",
+    "nuxt-property-decorator": "^2.3.0",
     "ts-node": "^8.3.0",
     "vuefire": "^2.0.1",
     "vuexfire": "^3.0.1"
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
     "@nuxtjs/eslint-module": "^0.0.1",
+    "@types/jest": "^24.0.15",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/eslint-plugin-tslint": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
@@ -50,7 +52,32 @@
     "jest": "^24.1.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.18.2",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.18.0",
-    "vue-jest": "^3.0.3"
+    "vue-class-component": "^7.1.0",
+    "vue-jest": "^3.0.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json",
+        "diagnostics": true
+      }
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/$1",
+      "^~/(.*)$": "<rootDir>/$1"
+    },
+    "moduleDirectories": ["node_modules", "./"]
   }
 }

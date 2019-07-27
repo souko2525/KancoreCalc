@@ -23,11 +23,11 @@
           Documentation
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="/calc"
           target="_blank"
           class="button--grey"
         >
-          GitHub
+          calc
         </a>
       </div>
     </div>
@@ -39,8 +39,6 @@ import Logo from '~/components/Logo.vue'
 import firebase from '@/plugins/firebase'
 import { mapGetters } from 'vuex'
 
-
-
 export default {
   components: {
     Logo
@@ -51,6 +49,11 @@ export default {
   },
   computed: {
     ...mapGetters({ users: 'getUsers' })
+  },
+  methods: {
+    googleLogin: function() {
+      firebase.auth().signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    }
   }
 }
 </script>
